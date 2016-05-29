@@ -65,7 +65,7 @@ public class AdsFragment extends Fragment
 
     private OnFragmentInteractionListener mListener;
 
-    final String adsMainUrl = "http://lizunks.xicp.io:34789/trade_test/all_product.php";
+    final String adsMainUrl = "http://lizunks.xicp.io:34789/trade_test/all_product_on.php";
     final String getTypeUrl = "http://lizunks.xicp.io:34789/trade_test/search_product_type.php";
     final String searchAdUrl = "http://lizunks.xicp.io:34789/trade_test/search_product_name.php";
     final ArrayList<HashMap<String,String>> prodList = new ArrayList<HashMap<String, String>>();
@@ -169,7 +169,9 @@ public class AdsFragment extends Fragment
                 intent.putExtra("name",prodList.get(pos).get("name"));
                 intent.putExtra("price",prodList.get(pos).get("price"));
                 intent.putExtra("detail",prodList.get(pos).get("detail"));
-//                Intent intent = new Intent(AdsActivity.this,AdDetailActivity.class).putExtra(Intent.EXTRA_TEXT,adDetail);
+                intent.putExtra("author_id",prodList.get(pos).get("author_id"));
+                intent.putExtra("author",prodList.get(pos).get("author"));
+                intent.putExtra("type",prodList.get(pos).get("type"));
                 startActivity(intent);
             }
         });
@@ -388,6 +390,7 @@ public class AdsFragment extends Fragment
                 String prodDetail = jsonpost.getString("detail");
                 String prodType = jsonpost.getString("type");
                 String productAuthor = jsonpost.getString("author_id");
+                String author = jsonpost.getString("author");
                 HashMap<String,String> prod = new HashMap<String, String>();
                 prod.put("pd_id", productID);
                 prod.put("name", prodName);
@@ -395,6 +398,7 @@ public class AdsFragment extends Fragment
                 prod.put("detail", prodDetail);
                 prod.put("type", prodType);
                 prod.put("author_id", productAuthor);
+                prod.put("author",author);
                 prodList.add(prod);
             }
             String [] from = {"name","price","detail"};
