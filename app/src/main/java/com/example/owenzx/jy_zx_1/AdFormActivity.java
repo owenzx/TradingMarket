@@ -68,6 +68,7 @@ public class AdFormActivity extends AppCompatActivity {
                 params.put("author","Developer");
                 params.put("price",prod_price_str);
                 params.put("detail",prod_detail_str);
+                params.put("type","TEST");
                 return params;
             }
         };
