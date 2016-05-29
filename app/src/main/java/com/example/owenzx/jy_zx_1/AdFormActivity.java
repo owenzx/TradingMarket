@@ -65,6 +65,7 @@ public class AdFormActivity extends AppCompatActivity {
                 Map<String,String> params = new HashMap<String,String>();
                 params.put("name",prod_name_str);
                 params.put("author_id","999");
+                params.put("author","Developer");
                 params.put("price",prod_price_str);
                 params.put("detail",prod_detail_str);
                 return params;
