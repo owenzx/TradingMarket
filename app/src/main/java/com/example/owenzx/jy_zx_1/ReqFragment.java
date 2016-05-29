@@ -160,8 +160,10 @@ public class ReqFragment extends Fragment
 //                String adDetail = adapter.getItem(pos);
                 Intent intent = new Intent(getActivity(),ReqDetailActivity.class).putExtra("req_id",reqList.get(pos).get("req_id"));
                 intent.putExtra("title",reqList.get(pos).get("title"));
-                intent.putExtra("ideal_price",reqList.get(pos).get("ideal"));
+                intent.putExtra("ideal_price",reqList.get(pos).get("ideal_price"));
                 intent.putExtra("description",reqList.get(pos).get("description"));
+                intent.putExtra("author_id",reqList.get(pos).get("author_id"));
+                intent.putExtra("author",reqList.get(pos).get("author"));
 //                Intent intent = new Intent(AdsActivity.this,AdDetailActivity.class).putExtra(Intent.EXTRA_TEXT,adDetail);
                 startActivity(intent);
             }
@@ -345,11 +347,15 @@ public class ReqFragment extends Fragment
                 String reqTitle = jsonpost.getString("title");
                 String reqBudget = jsonpost.getString("ideal_price");
                 String reqDetail = jsonpost.getString("description");
+                String authorID = jsonpost.getString("author_id");
+                String authorName = jsonpost.getString("author");
                 HashMap<String, String> prod = new HashMap<String, String>();
                 prod.put("req_id", reqID);
                 prod.put("title", reqTitle);
                 prod.put("ideal_price", reqBudget);
                 prod.put("description", reqDetail);
+                prod.put("author_id",authorID);
+                prod.put("author",authorName);
                 reqList.add(prod);
 
                 String[] from = {"title", "ideal_price", "description"};

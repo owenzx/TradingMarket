@@ -67,6 +67,7 @@ public class ReqFormActivity extends AppCompatActivity {
                 params.put("ideal_price",req_budget_str);
                 params.put("description",req_detail_str);
                 params.put("type","Book");
+                params.put("author","Developer");
                 return params;
             }
         };
