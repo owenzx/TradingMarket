@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AdFormActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prodName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Product Name"
+        android:minWidth="200dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:id="@+id/prodPrice"
+        android:layout_below="@+id/prodName"
+        android:layout_centerHorizontal="true"
+        android:hint="Price"
+        android:minWidth="200dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prodDetail"
+        android:layout_below="@+id/prodPrice"
+        android:layout_centerHorizontal="true"
+        android:hint="Detail Description"
+        android:minWidth="200dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/buttonAddAd"
+        android:layout_below="@+id/prodDetail"
+        android:layout_alignLeft="@+id/prodDetail"
+        android:layout_alignStart="@+id/prodDetail" />
+
+</RelativeLayout>
